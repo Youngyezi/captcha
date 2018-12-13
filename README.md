@@ -36,15 +36,15 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 	
 	$router->get('/captcha', function (Youngyezi\Captcha\Captcha $captcha){
 
-	// 创建验证码
+		// 创建验证码
 
-	// 配置文件 key($config),默认 default
-	// 直接返回验证码图片
-	    return $captcha->create($config);
+		// 配置文件 key($config),默认 default
+		// 直接返回验证码图片
+	    	return $captcha->create($config);
 
-	// Api 模式
-	// 返回 验证码 captcha 和相关 key， 后端服务通过 captcha 和 key 来校验
-	return $captcha->create($config, true);
+		// Api 模式
+		// 返回 验证码 captcha 和相关 key， 后端服务通过 captcha 和 key 来校验
+	    	return $captcha->create($config, true);
 	});
 
 校验
