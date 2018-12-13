@@ -1,0 +1,26 @@
+{
+    "name": "youngyezi/captcha",
+    "description": "lumen captcha Package 验证码",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "youngyezi"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Youngyezi\\Captcha\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.6.4",
+        "ext-gd": "*",
+        "illuminate/config": "~5.0",
+        "illuminate/filesystem": "~5.0",
+        "illuminate/support": "~5.0",
+        "illuminate/hashing": "~5.0",
+        "intervention/image": "~2.2"
+    },
+    "minimum-stability": "dev",
+}
