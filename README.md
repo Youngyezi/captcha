@@ -5,33 +5,33 @@
 
 >A simple [Laravel 5](http://www.laravel.com/) service provider for including the [Captcha for Laravel 5](https://github.com/mewebstudio/captcha).
 
-### 源于
+## 源于
 
 Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有很多错误
 
 由此我基于原 Captcha 包进行了一些错误修复来集成 Lumen 。 同时删除了一些个人觉得太过冗余的东西，让使用更加方便和自由
 
-### 安装
+## 安装
 
 
 	composer require youngyezi/captcha
 
-### 使用
+## 使用
 
 
-注册服务 `bootstrap\app.php`
+### 注册服务 `bootstrap\app.php`
 
 	$app->register(Youngyezi\Captcha\CaptchaServiceProvider::class);
 
 
-添加别名
+### 添加别名
 
 	$app->alias('captcha', 'Youngyezi\Captcha\CaptchaServiceProvider');
 
 
-### For Example
+## For Example
 
-添加验证码获取路由
+### 添加验证码获取路由
 	
 	
 	$router->get('/captcha', function (Youngyezi\Captcha\Captcha $captcha){
@@ -47,7 +47,7 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 	    	return $captcha->create($config, true);
 	});
 
-校验
+### 校验
 	
 	// 需要开启 session 服务
        	$captcha = $request->input('captcha');
