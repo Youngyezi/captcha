@@ -50,7 +50,7 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 ### 校验
 	
 	// 需要开启 session 服务
-       	$captcha = $request->input('captcha');
+	$captcha = $request->input('captcha');
 	
 	if(app('captcha')->check($captcha) === false) {
    		
