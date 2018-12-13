@@ -1,4 +1,4 @@
-#Lumen 验证码
+# Lumen 验证码
 
 基于  [Captcha for Laravel 5](https://github.com/mewebstudio/captcha "Captcha for Laravel 5") 修改而来的
 
@@ -36,26 +36,26 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 	
 	$router->get('/captcha', function (Youngyezi\Captcha\Captcha $captcha){
 
-		// 创建验证码
+	// 创建验证码
 
-		// 配置文件 key($config),默认 default
-		// 直接返回验证码图片
+	// 配置文件 key($config),默认 default
+	// 直接返回验证码图片
 	    return $captcha->create($config);
 
-		// Api 模式
-		// 返回 验证码 captcha 和相关 key， 后端服务通过 captcha 和 key 来校验
-		return $captcha->create($config, true);
+	// Api 模式
+	// 返回 验证码 captcha 和相关 key， 后端服务通过 captcha 和 key 来校验
+	return $captcha->create($config, true);
 	});
 
 校验
 	
 	// 需要开启 session 服务
-    $captcha = $request->input('captcha');
+       $captcha = $request->input('captcha');
 	
 	if(app('captcha')->check($captcha) === false) {
    		
 		//校验失败
-    }
+    	}
 
 
 	//通过 code 和 key 来校验
@@ -65,7 +65,7 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 	if(app('captcha')->check_api($captcha, $key) === false) {
    		
 		//校验失败
-    }
+   	 }
 
 ### 最后
 
