@@ -1,4 +1,4 @@
-# Lumen 验证码
+# Captcha for Lumen
 
 基于  [Captcha for Laravel 5](https://github.com/mewebstudio/captcha "Captcha for Laravel 5") 修改而来的
 
@@ -24,7 +24,7 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 	$app->register(Youngyezi\Captcha\CaptchaServiceProvider::class);
 
 
-        // 添加别名
+  	// 添加别名
 	$app->alias('captcha', 'Youngyezi\Captcha\CaptchaServiceProvider');
 
 
