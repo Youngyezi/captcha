@@ -22,5 +22,5 @@
         "illuminate/hashing": "~5.0",
         "intervention/image": "~2.2"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "dev"
 }
