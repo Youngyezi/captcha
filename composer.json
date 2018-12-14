@@ -1,6 +1,6 @@
 {
     "name": "youngyezi/captcha",
-    "description": "lumen captcha Package 验证码",
+    "description": "Captcha for Lumen，Lumen 验证码",
     "type": "library",
     "license": "MIT",
     "authors": [
