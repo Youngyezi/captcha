@@ -24,8 +24,7 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 	$app->register(Youngyezi\Captcha\CaptchaServiceProvider::class);
 
 
-### 添加别名
-
+        // 添加别名
 	$app->alias('captcha', 'Youngyezi\Captcha\CaptchaServiceProvider');
 
 
