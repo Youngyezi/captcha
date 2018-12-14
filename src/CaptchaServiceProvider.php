@@ -18,17 +18,6 @@ class CaptchaServiceProvider extends ServiceProvider {
         $this->publishes([
             __DIR__.'/../config/captcha.php' => config_path('captcha.php')
         ], 'config');
-
-        // Validator extensions
-        $this->app['validator']->extend('captcha', function($attribute, $value, $parameters)
-        {
-            return $this->app['captcha']->check($value);
-        });
-
-        $this->app['validator']->extend('captcha_api', function($attribute, $value, $parameters)
-        {
-            return app('captcha')->check_api($value, $parameters[0]);
-        });
     }
 
 
