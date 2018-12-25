@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Mews\Captcha
  */
-class Captcha extends Facade {
+class Captcha extends Facade
+{
     /**
      * @return string
      */
