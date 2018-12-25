@@ -18,8 +18,6 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 
 ## 使用
 
->新版的包已经删除了 session 支持，需要业务方自身来存储校验的 key 值。
->这样个人觉得更方便来解耦业务，尤其 Lumen 大多时候用来做 api 开发，并不需要开启 session
 
 ### 注册服务 `bootstrap\app.php`
 
@@ -28,10 +26,7 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 
   	// 添加别名
 	$app->alias('captcha', 'Youngyezi\Captcha\CaptchaServiceProvider');
-	
-### 配置文件
 
-复制 `config/captcha.php` 至 项目 `config`  文件下
 
 ## For Example
 
@@ -41,26 +36,34 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 	$router->get('/captcha', function (Youngyezi\Captcha\Captcha $captcha){
 
 		// 创建验证码
-		
+
 		// 配置文件 key($config),默认 default
+		// 直接返回验证码图片
+	    	return $captcha->create($config);
+
+		// Api 模式
 		// 返回 验证码 captcha 和相关 key， 后端服务通过 captcha 和 key 来校验
-	    	$data = app('captcha')->create();
-	    	
-	    	// 自身业务处理
-	    	....
-	    	// 自定储存 key （如 redis ，session 等）
+	    	return $captcha->create($config, true);
 	});
 
 ### 校验
-
-	// 通过 code 和 key 来校验
+	
+	// 需要开启 session 服务
 	$captcha = $request->input('captcha');
 	
-	// 获取自定义存储的 key 值
-	$key;
+	if(app('captcha')->check($captcha) === false) {
+   		
+		//校验失败
+	}
+
+
+	//通过 code 和 key 来校验
+	$captcha = $request->input('captcha');
+	$key     = $request->input('key');
 		
-	if(app('captcha')->check($captcha, $key) === false) {
-   		   //校验失败
+	if(app('captcha')->check_api($captcha, $key) === false) {
+   		
+		//校验失败
    	}
 
 ### 最后
