@@ -65,7 +65,3 @@ Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有
 	if(app('captcha')->check($captcha, $key) === false) {
    		   //校验失败
    	}
-
-### 最后
-
-此包在 Lumen 5.5 下开发，如果有其他问题或 bug， 请告知。
