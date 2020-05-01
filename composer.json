@@ -16,11 +16,7 @@
     "require": {
         "php": ">=5.6.4",
         "ext-gd": "*",
-        "illuminate/config": "~5.0",
-        "illuminate/filesystem": "~5.0",
-        "illuminate/support": "~5.0",
-        "illuminate/hashing": "~5.0",
-        "intervention/image": "~2.2"
+        "laravel/lumen-framework": "^6.0"
     },
     "minimum-stability": "dev"
 }
