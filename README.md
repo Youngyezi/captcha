@@ -5,6 +5,10 @@
 
 >A simple [Laravel 5](http://www.laravel.com/) service provider for including the [Captcha for Laravel 5](https://github.com/mewebstudio/captcha).
 
+## update
+
+支持了lumen 6x
+
 ## 源于
 
 Captcha for Laravel 5 作者很久没有更新了，同时 Captcha 在 Lumen 有很多错误
